@@ -1,7 +1,7 @@
 module ApplicationHelper
     def devise_form_field(form, field_type, field_name, label_text, opts = {})
       content_tag :div, class: 'field' do
-        concat form.label field_name, label_text
+        concat form.label field_name, label_text if label_text.present?
         if field_type == :check_box
           concat form.send(field_type, field_name, opts)
         else

@@ -5,13 +5,16 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <%= devise_form_field(f, :email_field, :email, "Email", autofocus: true, autocomplete: "email") %>
+    <%= devise_form_field(f, :text_field, :bio, "Bio", autofocus: true) %>
+    <%= devise_form_field(f, :file_field, :avatar, "Avatar", autofocus: true) %>
+    <%= devise_form_field(f, :text_field, :username, "Username", autofocus: true) %>
 
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %>
-      <%= devise_form_field(f, :password_field, :password, "Password", autocomplete: "new-password") %>
+      <%= devise_form_field(f, :password_field, :password, nil, autocomplete: "new-password") %>
     </div>
 
     <%= devise_form_field(f, :password_field, :password_confirmation, "Password confirmation", autocomplete: "new-password") %>

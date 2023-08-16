@@ -49,7 +49,7 @@ Rails.application.routes.draw do
 end
 """
 
-## Add Bootstrap
+## Add bootstrap
 
 app/views/layouts/application.html.erb
 """
@@ -57,7 +57,7 @@ app/views/layouts/application.html.erb
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 """
 
-## Add Footer & Navbar
+## Add footer & navbar
 create app/views/layouts/_navbar.html.erb
 """
 https://getbootstrap.com/docs/5.3/components/navbar/ - Navbar w/ text -
@@ -92,13 +92,13 @@ app/views/layouts/application.html.erb
 
 ...
 
-## Adding Image Support to Image Model
+## Adding image support to image model
 
 rails active_storage:install
 rails db:migrate
 rails s
 
-## Static Page
+## Static page
 
 rails g controller home about
 
@@ -124,20 +124,39 @@ rails g devise:views
 rails g devise user
 rails db:migrate
 
-## Styling devise forms 
+## Style devise forms 
 
 ...
 
-## Connecting User Authentication to Post Model
+## Connect user authentication to post model
 
 rails g migration AddUseridToPosts user_id:string
 rails db:migrate
 
-# My Posts Page
+# My Posts page
 
 ...
 
-## Comment Model
+## Comment model
 
 rails g scaffold comment text:string user_id:string post_id:string
 rails db:migrate
+
+## Profile model
+
+rails g controller users show
+rails g migration AddDescriptionToUsers 
+
+db/migrate/...add_description...
+"""
+class AddDescriptionToUsers < ActiveRecord::Migration[7.0]
+  def change
+
+    add_column :users, :bio, :string
+    add_column :users, :username, :string
+  end
+end
+"""
+rails db:migrate
+
+rails g devise:controllers users

@@ -1,6 +1,10 @@
 <div class="post-container">
-  <p><%= post.title %></p>
-  <p><%= post.description %></p>
-  <%= link_to post_path(post), class: "stretched-link" do %>
-  <% end %>
+    <div style="position: relative;">
+        <p><%= post.title %></p>
+        <p><%= post.description %></p>
+        <%= link_to '', post_path(post), class: "stretched-link" %>
+    </div>
+    <p>
+        To user: <%= link_to post.user.email, user_path(post.user) if post.user.present? %>
+    </p>
 </div>
