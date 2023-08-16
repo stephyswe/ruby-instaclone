@@ -98,6 +98,9 @@ rails active_storage:install
 rails db:migrate
 rails s
 
+## Static Page
+
+rails g controller home about
 
 
 
