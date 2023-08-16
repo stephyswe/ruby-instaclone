@@ -102,6 +102,31 @@ rails s
 
 rails g controller home about
 
+## Authentication (devise)
+
+https://rubygems.org/gems/devise/versions/4.9.2
+- copy "gemfile" paste in Gemfile
+bundle install
+rails g devise:install
+- copy "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }" to config/environments/development.rb
+- copy into app/views/layouts/application.html.erb
+"""
+<body>
+    <%= render "layouts/navbar" %>
+    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+     <%= render "layouts/footer" %>
+  </body>
+"""
+
+rails g devise:views
+rails g devise user
+rails db:migrate
+
+
+
+
 
 
 
