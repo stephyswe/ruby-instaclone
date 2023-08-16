@@ -3,6 +3,7 @@ Show
   <p><%= post.title %></p>
   <p><%= post.description %></p>
   <p><%= post.keywords %></p>
+  <p><%= post.user.email %></p>
    <% post.images.each do |image| %>
     <%= image_tag(image, style: "
       max-width: 50%;

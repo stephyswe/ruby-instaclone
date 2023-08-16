@@ -124,6 +124,14 @@ rails g devise:views
 rails g devise user
 rails db:migrate
 
+## Styling devise forms 
+
+...
+
+## Connecting User Authentication to Post Model
+
+rails g migration AddUseridToPosts user_id:string
+rails db:migrate
 
 
 

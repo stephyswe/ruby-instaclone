@@ -1,6 +1,9 @@
 <div class="col-xl-4 col-md-6 col-sm-8 col-10" style="margin: auto; background-color: #f8f8f8; border-radius: 6px; padding: 15px; box-shadow: 0px 0px 2px 2px (255, 255, 255, 0.1)">
   <%= form_with(model: post) do |form| %>
   <h1>New post</h1>
+    <div>
+      <%= form.text_field :user_id, type: "hidden", value: current_user.id %>
+    </div>
     <%= input_field_with_errors(form, post, :title, 'Title') %>
     <%= input_field_with_errors(form, post, :description, 'Description') %>
     <%= input_field_with_errors(form, post, :keywords, 'Keywords') %>
