@@ -137,4 +137,7 @@ rails db:migrate
 
 ...
 
-##
+## Comment Model
+
+rails g scaffold comment text:string user_id:string post_id:string
+rails db:migrate
