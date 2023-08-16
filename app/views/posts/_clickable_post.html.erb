@@ -1,5 +1,6 @@
 <div class="post-container">
   <p><%= post.title %></p>
   <p><%= post.description %></p>
-  <p><%= post.keywords %></p>
+  <%= link_to post_path(post), class: "stretched-link" do %>
+  <% end %>
 </div>
