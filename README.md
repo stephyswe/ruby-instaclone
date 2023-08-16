@@ -88,7 +88,15 @@ app/views/layouts/application.html.erb
  <%= render "layouts/footer" %>
 """
 
-## Create links
+## Create links & validate post
+
+...
+
+## Adding Image Support to Image Model
+
+rails active_storage:install
+rails db:migrate
+rails s
 
 
 

@@ -4,6 +4,7 @@
     <%= input_field_with_errors(form, post, :title, 'Title') %>
     <%= input_field_with_errors(form, post, :description, 'Description') %>
     <%= input_field_with_errors(form, post, :keywords, 'Keywords') %>
+    <%= form.file_field :images, multiple:true %>
     <div>
       <%= form.submit class: "btn btn-primary col-12" %>
     </div>

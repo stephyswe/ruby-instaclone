@@ -1,5 +1,11 @@
 <div class="post-container">
+Show
   <p><%= post.title %></p>
   <p><%= post.description %></p>
   <p><%= post.keywords %></p>
+   <% post.images.each do |image| %>
+    <%= image_tag(image, style: "
+      max-width: 50%;
+  height: auto; object-fit: contain;") %>
+  <% end %>
 </div>
