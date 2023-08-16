@@ -4,6 +4,17 @@
         <p><%= post.description %></p>
         <%= link_to '', post_path(post), class: "stretched-link" %>
     </div>
+    <div>
+        <% if user_signed_in? %>
+            <% like = current_user.likes.find_by(post: post) %>
+                <% if like.nil? %>
+                   <%= button_to "like", likes_path(like: { post_id: post.id }), method: :post, remote: true, class:"btn-like" %>
+                <% else %>
+                    <%= button_to "Unlike", like_path(like), method: :delete, remote: true, class:"btn-like" %>
+            <% end %>
+        <% end %>
+        <p> <%= post.likes.count %> Likes </p>
+    </div>
     <p>
         To user: <%= link_to post.user.email, user_path(post.user) if post.user.present? %>
     </p>

@@ -160,3 +160,8 @@ end
 rails db:migrate
 
 rails g devise:controllers users
+
+## Like model
+
+rails g model like user:references post:references
+rails g controller likes create destroy like_params
