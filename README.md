@@ -22,3 +22,75 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Video
+https://www.youtube.com/watch?v=DhxLOC-9kW0&list=PLR8BLHNyVZDVkZHDbm2mSL4RMISIBuBqs
+
+# Commands
+rails s - run app
+
+## Create app
+
+rails new instaclone 
+
+## Creating our first scaffold
+
+rails g scaffold posts title:string description:string keywords:string
+rails db:migrate
+
+config/routes.rb
+"""
+Rails.application.routes.draw do
+  resources :posts
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  root "posts#index"
+end
+"""
+
+## Add Bootstrap
+
+app/views/layouts/application.html.erb
+"""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+"""
+
+## Add Footer & Navbar
+create app/views/layouts/_navbar.html.erb
+"""
+https://getbootstrap.com/docs/5.3/components/navbar/ - Navbar w/ text -
+"""
+
+app/views/layouts/application.html.erb
+"""
+ <%= render "layouts/navbar" %>
+"""
+
+edit app/views/layouts/_navbar.html.erb
+"""
+ <%= link_to "Navbar w/ text", posts_path, class:"navbar-brand" %>
+ ...
+ <li class="nav-item">
+    <%= link_to "Home", root_path, class:"nav-link" %>
+</li>
+ """
+
+ create app/views/layouts/_footer.html.erb
+"""
+https://mdbootstrap.com/docs/standard/navigation/footer/ - Basic example
+"""
+
+app/views/layouts/application.html.erb
+"""
+ <%= yield %>
+ <%= render "layouts/footer" %>
+"""
+
+## Create links
+
+
+
+
+
