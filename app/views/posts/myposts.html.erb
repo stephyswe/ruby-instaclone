@@ -1,0 +1,12 @@
+<% stylesheet_link_tag("post")%>
+<p style="color: green"><%= notice %></p>
+<h1>My Posts</h1>
+<div id="posts" class="text-center">
+<% @posts.each do |post| %>
+  <% if post.user %>
+    <% if post.user.id == current_user.id %>
+      <%= render partial: "clickable_post", locals: { post: post } %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>

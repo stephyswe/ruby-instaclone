@@ -133,8 +133,8 @@ rails db:migrate
 rails g migration AddUseridToPosts user_id:string
 rails db:migrate
 
+# My Posts Page
 
+...
 
-
-
-
+##
