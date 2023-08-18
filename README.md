@@ -165,3 +165,15 @@ rails g devise:controllers users
 
 rails g model like user:references post:references
 rails g controller likes create destroy like_params
+
+## Follow model
+
+Gemfile - # My Custom Gems
+"""
+gem 'followability', github: 'nejdetkadir/followability', branch: 'main'
+"""
+
+bundle install
+
+rails g followability:install
+rails db:migrate
