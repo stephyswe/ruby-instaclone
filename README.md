@@ -177,3 +177,16 @@ bundle install
 
 rails g followability:install
 rails db:migrate
+
+## Search by username
+
+Gemfile - add ransack
+"""
+gem 'ransack'
+"""
+
+bundle install
+rails db:migrate
+rails g controller profiles index
+
+## 
